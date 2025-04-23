@@ -6,12 +6,17 @@ package umaengine;
 import umaengine.obj.Race;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    private Race raceobj;
+
+    public String getName() {
+        return "Program";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        System.out.println(new Race().returnNum());
+        App a = new App();
+        System.out.println("My name is: " + a.getName() + "!");
+        a.raceobj = new Race();
+        a.raceobj.setName(args[0]);
+        System.out.println("Race has name: " + a.raceobj.returnName() + ".");
     }
 }
