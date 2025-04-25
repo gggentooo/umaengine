@@ -6,6 +6,16 @@
 package umaengine.obj;
 
 public class Race {
+    // 마장 유형: 잔디, 더트
+    public enum FieldType {
+        TURF, DIRT
+    }
+
+    // 회전 방향: 시계(우), 반시계(좌) 
+    public enum Direction {
+        CLOCKWISE, COUNTERCLOCKWISE
+    }
+
     private short id;
     private String name;
 

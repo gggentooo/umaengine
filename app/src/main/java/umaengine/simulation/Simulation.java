@@ -10,9 +10,9 @@ package umaengine.simulation;
 import umaengine.obj.Race;
 
 public class Simulation {
-    private Race race;
+    private final Race race;
 
     public Simulation(short race_id) {
-        this.race = new Race(race_id);
+        race = new Race(race_id);
     }
 }

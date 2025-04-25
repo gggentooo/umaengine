@@ -15,7 +15,7 @@ public class App {
     public static void main(String[] args) {
         App a = new App();
         System.out.println("My name is: " + a.getName() + "!");
-        a.raceobj = new Race();
+        a.raceobj = new Race(12);
         a.raceobj.setName(args[0]);
         System.out.println("Race has name: " + a.raceobj.returnName() + ".");
     }
