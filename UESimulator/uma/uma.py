@@ -4,7 +4,7 @@ UESimulator - obj/uma.py
 Uma 오브젝트의 class definition
 """
 
-from UES_obj.stat import StatSet
+from UESimulator.uma.stat import StatSet
 
 class Uma:
     def __init__(self, stats: StatSet):

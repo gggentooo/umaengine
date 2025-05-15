@@ -5,7 +5,7 @@ UESimulator - enums/constants.py
 모든 enum class의 이름은 {E + (descriptor)} 형태가 되어야 함
 """
 
-from UES_enums.base import UEEnum, UEIntEnum
+from UESimulator.enums.base import UEIntEnum
 
 """
 마신 단위
@@ -22,16 +22,3 @@ class EDist(UEIntEnum):
     NECK = HALF_LENGTH / 2          # 4
     HEAD = NECK / 2                 # 2
     NOSE = HEAD / 2                 # 1
-
-"""
-스탯 종류
-
-스스파근지 01234
-EStatType(0).name => 'SPEED'
-"""
-class EStatType(UEIntEnum):
-    SPEED = 0
-    STAMINA = 1
-    POWER = 2
-    TENACITY = 3
-    INTELLIGENCE = 4

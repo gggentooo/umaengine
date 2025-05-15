@@ -6,7 +6,7 @@ class Stat
 class MutableStat(Stat)
 """
 
-from UES_enums.constants import EStatType
+from UESimulator.enums.umaattr import EStatType
 
 """
 기본 Stat 클래스
