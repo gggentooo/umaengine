@@ -8,7 +8,7 @@ from UESimulator.uma.stat import StatSet
 
 class Uma:
     def __init__(self, stats: StatSet):
-        self._stats = stats
+        self._stats: StatSet = stats
     
     # 스탯 read
     @property

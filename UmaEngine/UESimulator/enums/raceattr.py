@@ -30,10 +30,11 @@ class ERaceSurface(UEIntEnum):
 """
 구간 특성
 """
-# 구간 유형 (직선, 코너)
+# 구간 유형 (정지, 직선, 코너)
 class ESectionType(UEIntEnum):
-    STRETCH = 0         # 직선
-    CURB = 1            # 코너
+    NODIST = 0          # 정지 (게이트 등 길이가 0인 구간)
+    STRETCH = 1         # 직선
+    CURB = 2            # 코너
 
 # 경사도 (평지, 오르막, 내리막)
 class ESectionSlope(UEIntEnum):
