@@ -1,5 +1,5 @@
 """
-UESimulator - obj/uma.py
+UESimulator.uma.uma
 
 Uma 오브젝트의 class definition
 """

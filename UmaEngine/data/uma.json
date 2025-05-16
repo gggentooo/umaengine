@@ -1,0 +1,28 @@
+[
+    {
+        "meta": {
+            "id": 0,
+            "name": "아스카니야"
+        },
+        "stats": {
+            "speed": 6,
+            "stamina": 7,
+            "power": 8,
+            "tenacity": 5,
+            "intelligence": 9
+        }
+    },
+    {
+        "meta": {
+            "id": 1000,
+            "name": "트레브"
+        },
+        "stats": {
+            "speed": 12,
+            "stamina": 14,
+            "power": 11,
+            "tenacity": 9,
+            "intelligence": 8
+        }
+    }
+]

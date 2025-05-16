@@ -1,0 +1,60 @@
+{
+    "meta": {
+        "id": 0,
+        "name": "테스트 컵"
+    },
+    "attr": {
+        "surface": 0,
+        "direction": 1
+    },
+    "uma_list": [
+        {
+            "id": 0
+        },
+        {
+            "id": 1000
+        }
+    ],
+    "sections": [
+        {
+            "length": 0,
+            "type": 0,
+            "slope": 0
+        },
+        {
+            "length": 200,
+            "type": 1,
+            "slope": 0
+        },
+        {
+            "length": 200,
+            "type": 2,
+            "slope": 0
+        },
+        {
+            "length": 200,
+            "type": 2,
+            "slope": 0
+        },
+        {
+            "length": 400,
+            "type": 1,
+            "slope": 0
+        },
+        {
+            "length": 200,
+            "type": 2,
+            "slope": 0
+        },
+        {
+            "length": 200,
+            "type": 2,
+            "slope": 0
+        },
+        {
+            "length": 200,
+            "type": 1,
+            "slope": 0
+        }
+    ]
+}
