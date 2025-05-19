@@ -7,22 +7,14 @@ Uma 오브젝트의 class definition
 from UESimulator.uma.stat import StatSet
 
 class Uma:
-    def __init__(self, stats: StatSet):
+    def __init__(self, id: int, name: str, stats: StatSet):
+        self._id: int = id
+        self._name: str = name
         self._stats: StatSet = stats
     
-    # 스탯 read
     @property
-    def speed(self) -> int:
-        return self._stats._speed.value
+    def id(self):
+        return self._id
     @property
-    def stamina(self) -> int:
-        return self._stats._stamina.value
-    @property
-    def power(self) -> int:
-        return self._stats._power.value
-    @property
-    def tenacity(self) -> int:
-        return self._stats._tenacity.value
-    @property
-    def intelligence(self) -> int:
-        return self._stats._intelligence.value
+    def name(self):
+        return self._name
