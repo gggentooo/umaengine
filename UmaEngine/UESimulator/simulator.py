@@ -4,7 +4,7 @@ UESimulator.simulator
 Simulator class definition
 """
 
-from UESimulator.component.io.fileio import JsonReader
+from UESimulator.component.fileio import JsonReader
 
 class Simulator:
     def __init__(self):
