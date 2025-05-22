@@ -26,7 +26,7 @@ class SystemLogger:
     
     def prompt(self, content: str) -> int:
         try:
-            val: int = int(input(f"\u001b[1;36m> INPUT \u001b[0;36m{content}\u001b[0m"))
+            val: int = int(input(f"\u001b[1;36m> INPUT \u001b[0;36m{content}: \u001b[0m"))
         except ValueError:
             raise err.InvalidInputError
         else:

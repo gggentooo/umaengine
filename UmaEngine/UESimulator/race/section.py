@@ -7,24 +7,24 @@ Section 오브젝트의 class definition
 from UESimulator.enums.raceattr import ESectionType, ESectionSlope
 
 class Section:
-    def __init__(self, length: int, type: ESectionType, slope: ESectionSlope):
+    def __init__(self, name: str, length: int, type: ESectionType, slope: ESectionSlope):
+        self._name: str = name
         self._length: int = length
-        self._type: ESectionType = type,
+        self._type: ESectionType = type
         self._slope: ESectionSlope = slope
-        self._name: str = ""
+        
+    def __repr__(self):
+        return f"{self.name} | {self.type} {self.length}m ({self.slope})"
     
     @property
-    def length(self) -> int:
+    def name(self):
+        return self._name
+    @property
+    def length(self):
         return self._length
     @property
-    def type(self) -> ESectionType:
+    def type(self):
         return self._type
     @property
-    def slope(self) -> ESectionSlope:
+    def slope(self):
         return self._slope
-    @property
-    def name(self) -> str:
-        return self._name
-    @name.setter
-    def setName(self, new_name: str):
-        self._name = new_name

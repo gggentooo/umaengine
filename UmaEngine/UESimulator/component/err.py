@@ -24,6 +24,10 @@ class FileNotFoundError(UEError):
 class RaceNotFoundError(UEError):
     def __init__(self):
         super().__init__("입력된 레이스 ID와 일치하는 레이스를 찾지 못했습니다.")
+
+class InvalidRaceDataError(UEError):
+    def __init__(self):
+        super().__init__("입력된 레이스 ID와 일치하는 데이터의 JSON 형식 혹은 값이 올바르지 않습니다.")
         
 class SimulationInitFailError(UEError):
     def __init__(self):

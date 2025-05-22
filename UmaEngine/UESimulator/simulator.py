@@ -32,18 +32,13 @@ class Simulator:
     
     def initialize(self):
         try:
-            race_id = int(self.syslog.prompt("레이스 ID를 입력해 주세요."))
+            race_id = int(self.syslog.prompt("레이스 ID를 입력해 주세요"))
+            self._race = self.objldr.load_race(race_id)
         except err.UEError as e:
             self.syslog.log(-1, e.message)
             raise err.SimulationInitFailError
-        else:
-            try:
-                self._race = self.objldr.load_race(race_id)
-            except err.UEError as e:
-                self.syslog.log(-1, e.message)
-                raise err.SimulationInitFailError
         
-        print(self.race.name)
+        self.syslog.log(0, f"레이스 로드 완료:\n{self.race}")
         
     def simulate(self):
         try:

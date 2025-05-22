@@ -5,52 +5,56 @@
             "name": "테스트 컵"
         },
         "attr": {
-            "surface": 0,
-            "direction": 1
+            "surface": "잔디",
+            "direction": "우",
+            "weather": "맑음",
+            "field_condition": "양호"
         },
         "uma_list": [
             {
-                "id": 0
+                "id": 0,
+                "strategy": 1
             },
             {
-                "id": 1000
+                "id": 1000,
+                "strategy": 2
             }
         ],
         "sections": [
             {
                 "length": 200,
-                "type": 1,
-                "slope": 0
+                "type": "직선",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 400,
-                "type": 1,
-                "slope": 0
+                "type": "직선",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 1,
-                "slope": 0
+                "type": "직선",
+                "slope": "평지"
             }
         ]
     },
@@ -60,8 +64,10 @@
             "name": "테스트 컵 2"
         },
         "attr": {
-            "surface": 0,
-            "direction": 1
+            "surface": "더트",
+            "direction": "우",
+            "weather": "맑음",
+            "field_condition": "양호"
         },
         "uma_list": [
             {
@@ -74,38 +80,38 @@
         "sections": [
             {
                 "length": 200,
-                "type": 1,
-                "slope": 0
+                "type": "직선",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 400,
-                "type": 1,
-                "slope": 0
+                "type": "직선",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 2,
-                "slope": 0
+                "type": "코너",
+                "slope": "평지"
             },
             {
                 "length": 200,
-                "type": 1,
-                "slope": 0
+                "type": "직선",
+                "slope": "평지"
             }
         ]
     }
