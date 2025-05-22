@@ -5,7 +5,10 @@ UESimulator - enums/base.py
 (파이썬의 enum 라이브러리에서 임포트)
 """
 
-from enum import IntEnum
+from enum import IntEnum, StrEnum
 
 class UEIntEnum(IntEnum):
+    pass
+
+class UEStrEnum(StrEnum):
     pass
