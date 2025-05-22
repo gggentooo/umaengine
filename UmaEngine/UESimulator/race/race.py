@@ -26,10 +26,7 @@ class Race:
             self._disttype = RaceAttr.ERaceDistanceType.LONG
         
     def __repr__(self):
-        rstring = f"\u001b[0;32m[{self.name}] | {self.surface} {self._length}m({self.disttype}) {self.direction} {self.weather} {self.field_condition}\u001b[0m"
-        # for s in self.sections:
-        #     rstring += f"\n{s}"
-        return rstring
+        return f"[{self.name}] | {self.surface} {self._length}m({self.disttype}) {self.direction} {self.weather} {self.field_condition}"
     
     @property
     def name(self):
