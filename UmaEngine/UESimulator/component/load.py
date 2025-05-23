@@ -72,6 +72,8 @@ class ObjLoader(UEBaseComponent):
                 except (UEerr.UmaNotFoundError, UEerr.InvalidUmaDataError):
                     raise
             
+            # @TODO: 마장 상태에 따른 보너스 일괄 부여
+            
             race = Race(
                 rattr_name,
                 rattr_surf,
@@ -110,8 +112,9 @@ class ObjLoader(UEBaseComponent):
                 uattr_stats,
                 strategy
             )
+            
+            # @TODO: 적성 보너스/페널티 오브젝트 생성 & 부여
         except (KeyError, ValueError):
             raise UEerr.InvalidUmaDataError
         
         return uma
-        
