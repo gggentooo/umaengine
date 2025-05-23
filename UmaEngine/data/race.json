@@ -13,16 +13,16 @@
         "uma_list": [
             {
                 "id": 0,
-                "strategy": 1
+                "strategy": "선행"
             },
             {
                 "id": 1000,
-                "strategy": 2
+                "strategy": "선입"
             }
         ],
         "sections": [
             {
-                "length": 200,
+                "length": 400,
                 "type": "직선",
                 "slope": "평지"
             },
@@ -52,7 +52,7 @@
                 "slope": "평지"
             },
             {
-                "length": 200,
+                "length": 400,
                 "type": "직선",
                 "slope": "평지"
             }
@@ -71,10 +71,12 @@
         },
         "uma_list": [
             {
-                "id": 0
+                "id": 0,
+                "strategy": "선행"
             },
             {
-                "id": 1000
+                "id": 1000,
+                "strategy": "선입"
             }
         ],
         "sections": [

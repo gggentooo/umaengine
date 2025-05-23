@@ -11,7 +11,7 @@ class UEError(Exception):
     
     @property
     def message(self):
-        return self._message
+        return type(self).__name__ + ": " + self._message
 
 class InvalidInputError(UEError):
     def __init__(self):
@@ -23,11 +23,19 @@ class FileNotFoundError(UEError):
 
 class RaceNotFoundError(UEError):
     def __init__(self):
-        super().__init__("입력된 레이스 ID와 일치하는 레이스를 찾지 못했습니다.")
+        super().__init__("입력된 레이스 ID와 일치하는 데이터를 찾지 못했습니다.")
 
 class InvalidRaceDataError(UEError):
     def __init__(self):
         super().__init__("입력된 레이스 ID와 일치하는 데이터의 JSON 형식 혹은 값이 올바르지 않습니다.")
+
+class UmaNotFoundError(UEError):
+    def __init__(self):
+        super().__init__("출전 인원 중 하나 이상의 데이터를 찾지 못했습니다.")
+
+class InvalidUmaDataError(UEError):
+    def __init__(self):
+        super().__init__("출전 인원 중 하나 이상의 데이터의 JSON 형식 혹은 값이 올바르지 않습니다.")
         
 class SimulationInitFailError(UEError):
     def __init__(self):

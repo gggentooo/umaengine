@@ -10,6 +10,24 @@
             "power": 8,
             "tenacity": 5,
             "intelligence": 9
+        },
+        "talent": {
+            "surface": {
+                "turf": "D",
+                "dirt": "B"
+            },
+            "distance": {
+                "sprint": "B",
+                "mile": "A",
+                "middle": "F",
+                "long": "G"
+            },
+            "strategy": {
+                "nige": "E",
+                "senkou": "A",
+                "sashi": "B",
+                "oikomi": "G"
+            }
         }
     },
     {
@@ -23,6 +41,24 @@
             "power": 11,
             "tenacity": 9,
             "intelligence": 8
+        },
+        "talent": {
+            "surface": {
+                "turf": "A",
+                "dirt": "G"
+            },
+            "distance": {
+                "sprint": "C",
+                "mile": "A",
+                "middle": "S",
+                "long": "B"
+            },
+            "strategy": {
+                "nige": "D",
+                "senkou": "A",
+                "sashi": "S",
+                "oikomi": "C"
+            }
         }
     }
 ]

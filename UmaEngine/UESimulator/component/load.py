@@ -2,25 +2,23 @@
 UESimulator.component.obj.load
 """
 
-import json, os
-
 import UESimulator.component.err as UEerr
 import UESimulator.enums.raceattr as RaceAttr
-from UESimulator.component.systemlogger import SystemLogger
+import UESimulator.enums.umaattr as UmaAttr
+from UESimulator.component.base import UEBaseComponent
 from UESimulator.component.fileio import JsonReader
-from UESimulator.race.race import Race
 from UESimulator.race.section import Section
+from UESimulator.race.race import Race
+from UESimulator.uma.stat import StatSet
+from UESimulator.uma.uma import Uma
 
-class ObjLoader():
-    def __init__(self, syslog: SystemLogger, jsnrdr: JsonReader):
-        self._syslog: SystemLogger = syslog
-        self._jsnrdr: JsonReader = jsnrdr
+class ObjLoader(UEBaseComponent):
+    def __init__(self, jsnrdr: JsonReader, *args):
+        super().__init__(*args)
+        self._jsnrdr = jsnrdr
     
     @property
-    def syslog(self) -> SystemLogger:
-        return self._syslog
-    @property
-    def jsnrdr(self) -> JsonReader:
+    def jsnrdr(self):
         return self._jsnrdr
     
     def load_race(self, id: int) -> Race:
@@ -64,6 +62,16 @@ class ObjLoader():
                 sec_obj = Section(sattr_name, sattr_len, sattr_type, sattr_slope)
                 rattr_sections.append(sec_obj)
             
+            ulist_raw = r_data['uma_list']
+            u_idx = 0
+            for u in ulist_raw:
+                u_idx += 1
+                try:
+                    uma = self.load_uma(int(u['id']), UmaAttr.EStrategy(u['strategy']), u_idx)
+                    self.umalist.append(uma)
+                except (UEerr.UmaNotFoundError, UEerr.InvalidUmaDataError):
+                    raise
+            
             race = Race(
                 rattr_name,
                 rattr_surf,
@@ -76,3 +84,34 @@ class ObjLoader():
             raise UEerr.InvalidRaceDataError
         
         return race
+    
+    def load_uma(self, id: int, strategy: UmaAttr.EStrategy, gatenum: int) -> Uma:
+        try:
+            u_dict = {e['meta']['id']: e for e in self.jsnrdr.read(self.jsnrdr.EFilePaths.UMA)}
+            u_data = u_dict[id]
+        except UEerr.FileNotFoundError: raise
+        except KeyError: 
+            raise UEerr.UmaNotFoundError
+        
+        try:
+            uattr_name = str(u_data['meta']['name'])
+            uattr_stats = StatSet(
+                int(u_data['stats']['speed']),
+                int(u_data['stats']['stamina']),
+                int(u_data['stats']['power']),
+                int(u_data['stats']['tenacity']),
+                int(u_data['stats']['intelligence'])
+            )
+            
+            uma = Uma(
+                gatenum,
+                id,
+                uattr_name,
+                uattr_stats,
+                strategy
+            )
+        except (KeyError, ValueError):
+            raise UEerr.InvalidUmaDataError
+        
+        return uma
+        
